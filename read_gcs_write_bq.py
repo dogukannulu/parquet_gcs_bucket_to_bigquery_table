@@ -11,9 +11,9 @@ from google.cloud import storage, bigquery
 from concurrent.futures import ThreadPoolExecutor
 
 # Obtain the environmental variables defined in Cloud function
-project_id = os.getenv('project_id')
-bucket_name = os.getenv('bucket_name')
-dataset_name = os.getenv('dataset_name')
+project_id = os.environ.get('project_id')
+bucket_name = os.environ.get('bucket_name')
+dataset_name = os.environ.get('dataset_name')
 
 # Initialize the Google Cloud Storage and BigQuery clients
 storage_client = storage.Client(project=project_id)
