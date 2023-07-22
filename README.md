@@ -1,4 +1,6 @@
 # Information
+![image](https://github.com/dogukannulu/parquet_gcs_bucket_to_bigquery_table/assets/91257958/1356cab7-a775-4c43-82d6-e03433398cd8)
+
 
 1. The free API from [currency API](https://currencyapi.net) will be used to pull necessary exchange rates into BigQuery tables. This application will run with Google Cloud Functions and will be set to run daily at 02:00 UTC with Google Cloud Scheduler. Daily retrieved data will be kept historically in the target table. The target BigQuery table (currency_rate) will have date, currency code, and rates columns. These are used to convert non-USD amounts to USD.
 
