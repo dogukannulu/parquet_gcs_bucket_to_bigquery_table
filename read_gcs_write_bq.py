@@ -145,7 +145,7 @@ def create_main_df(file_name_with_date):
     df = pd.merge(df, currency_rate_df, left_on='currency', right_on='currency_code', how='left')
     
     # cost_usd and file_name_with_date is added to be compatible with BQ table
-    df['cost_usd'] = df['rates'] * df['cost']
+    df['cost_usd'] = df['cost'] / df['rates']
     df.drop(['currency_code', 'rates'], axis=1, inplace=True)
 
     df["file_name_with_date"] = file_name_with_date
